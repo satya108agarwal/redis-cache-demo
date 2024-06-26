@@ -46,6 +46,13 @@ Ensure your Spring Boot application includes the necessary dependencies for Clou
 ```
 **Note**: This dependency (java-cfenv-boot) is crucial for retrieving service bindings and configuration from Cloud Foundry's environment.
 
+### Bind Redis service
+```bash
+cf marketplace -e p.redis //command to list all the plans. 
+
+cf create-service p-redis shared-vm demo-redis
+```
+
 ### Manifest File
 Create a manifest.yml file in the root directory of your Spring Boot application. This file defines deployment settings such as application name, memory allocation, instances, and service bindings.
 
